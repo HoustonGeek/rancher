@@ -1,7 +1,7 @@
 # rancher
 Scripts for setting up rancher on Ubuntu
 
-Step1 - setup docker
+Step1 - setup docker<br>
 Step2 - setup RKE user and ssh passthru
 Step3 - download RKE, create single node yml file and install
 step4 - add cert-manager, install
