@@ -9,7 +9,7 @@ sudo pvcreate /dev/sda2
 sudo vgcreate vgmain /dev/sda2
 #create Logival Volumes for boot, swap, root, var and home - change the sizes as needed
 sudo lvcreate -L 512MiB -n lvboot vgmain
-sudo lvcreate -L 2TiB -n lvswap vgmain
-sudo lvcreate -L 6TiB -n lvhome vgmain
-sudo lvcreate -L 10TiB -n lvvar vgmain
+sudo lvcreate -L 2GiB -n lvswap vgmain
+sudo lvcreate -L 6GiB -n lvhome vgmain
+sudo lvcreate -L 10GiB -n lvvar vgmain
 sudo lvcreate -l +100%FREE -n lvroot vgmain
