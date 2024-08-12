@@ -18,8 +18,8 @@ w
 EOF
 
 
-sudo pvcreate /dev/nmve0n1p2
-sudo vgcreate vgmain /dev/nmve0n1p2
+sudo pvcreate /dev/nvme0n1p2
+sudo vgcreate vgmain /dev/nvme0n1p2
 sudo lvcreate -L 500m -n lvboot vgmain
 sudo lvcreate -L 2048m -n lvswap vgmain
 sudo lvcreate -L 4096m -n lvhome vgmain
