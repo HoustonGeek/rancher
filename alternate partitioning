@@ -1,0 +1,27 @@
+sudo fdisk /dev/nvme0n1 <<EOF
+# create new part
+g
+n
+1
+
++500m
+t
+1
+n
+2
+
+
+t
+
+31
+w
+EOF
+
+
+sudo pvcreate /dev/nmve0n1p2
+sudo vgcreate vgmain /dev/nmve0n1p2
+sudo lvcreate -L 500m -n lvboot vgmain
+sudo lvcreate -L 2048m -n lvswap vgmain
+sudo lvcreate -L 4096m -n lvhome vgmain
+sudo lvcreate -L 14g -n lvvar vgmain
+sudo lvcreate -l 100%FREE -n lvroot vgmain
